@@ -30,7 +30,10 @@ int main(){     //initializes main
     while (1){      //while loop to ask for input until user manually exits or inputs invalid score
         printf("Enter a 1 or 0 to stop.\n"); //instructs how to terminate program
         printf("Enter the NFL score: ");  //asks for input
-        scanf("%d", &score);    //scans input
+        if(scanf("%d", &score)!=1){  //scans input
+            printf("Invalid input. Please enter a number.\n");  //prints invalid input
+            return 1;   //Exits program
+        }    
         if (score<=1){  //checks for valid input
             printf("Invalid score\n");  //prints invalid score
             break;  //breaks while loop
